@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "705473499226",
+    "firebase_url": "https://mycoolchatapp.firebaseio.com",
+    "project_id": "mycoolchatapp",
+    "storage_bucket": "mycoolchatapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705473499226:android:729303f88d4f0a61",
+        "android_client_info": {
+          "package_name": "com.bilen.murat.mycoolchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705473499226-iirklh547jk0kdmip4em2k0csrsj74ea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bilen.murat.mycoolchatapp",
+            "certificate_hash": "8cf84aa296bedfadbf490ef648cbe8d62241cda7"
+          }
+        },
+        {
+          "client_id": "705473499226-jjphaqpi4cg4bkm9vrq2r5f9vln39a48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlbQOnwxE9ZM0gBGoerDOkTlTyo1dS8gI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705473499226-jjphaqpi4cg4bkm9vrq2r5f9vln39a48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
