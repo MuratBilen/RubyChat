@@ -30,7 +30,10 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".StatusActivity"
-            android:parentActivityName=".SettingsActivity"></activity>
+            android:parentActivityName=".SettingsActivity" />
+        <activity
+            android:name=".UsersActivity"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
