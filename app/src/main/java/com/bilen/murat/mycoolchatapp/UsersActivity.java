@@ -43,7 +43,6 @@ public class UsersActivity extends AppCompatActivity
 		linearLayoutManager.setReverseLayout(true);
 		linearLayoutManager.setStackFromEnd(true);
 		mUsersList.setLayoutManager(linearLayoutManager);
-		// Query query = FirebaseDatabase.getInstance().getReference().child("Users").limitToLast(10);
 		allUserReference = FirebaseDatabase.getInstance().getReference().child("Users");
 		FirebaseRecyclerOptions<Users> options = new FirebaseRecyclerOptions.Builder<Users>().setQuery(allUserReference, Users.class).build();
 		FirebaseRecyclerAdapter firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Users, UsersViewHolder>(options)

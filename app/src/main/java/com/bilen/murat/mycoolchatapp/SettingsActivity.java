@@ -2,6 +2,7 @@ package com.bilen.murat.mycoolchatapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -29,9 +30,12 @@ import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import id.zelory.compressor.Compressor;
 
 public class SettingsActivity extends AppCompatActivity
 {
@@ -76,7 +80,10 @@ public class SettingsActivity extends AppCompatActivity
 				String thumbImage = dataSnapshot.child("thumb_image").getValue().toString();
 				mName.setText(name);
 				mStatus.setText(status);
-				Picasso.get().load(image).into(mDisplayImage);
+				if (!image.equals("default")) {
+					Picasso.get().load(image).placeholder(R.drawable.default_profile_photo_foreground).into(mDisplayImage);
+				}
+
 			}
 
 			@Override
@@ -130,8 +137,16 @@ public class SettingsActivity extends AppCompatActivity
 
 
 				Uri resultUri = Objects.requireNonNull(result).getUri();
+				File thumb_filePath = new File(resultUri.getPath());
 				final String current_uId = mCurrentUser.getUid();
+				try {
+					Bitmap thumb_bitmap = new Compressor(this).compressToBitmap(thumb_filePath);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 				StorageReference filepath = mImageStorage.child("profile_Images").child(current_uId + ".jpg");
+
+
 				filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>()
 				{
 					@Override

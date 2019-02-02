@@ -6,6 +6,10 @@ public class Users
 	private String image;
 	private String status;
 
+	public Users()
+	{
+	}
+
 	public Users(String name, String image, String status)
 	{
 		this.name = name;
